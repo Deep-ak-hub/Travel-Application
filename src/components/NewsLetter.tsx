@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "./Button";
+import Icon from "./LogoComponent/Icon";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -30,11 +31,9 @@ export default function Newsletter() {
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-8 bg-background-light border-t border-border">
       <div className="max-w-3xl mx-auto text-center">
-
+        
         {/* Icon */}
-        <div className="w-14 h-14 rounded-2xl bg-gradient-sunset flex items-center justify-center text-2xl mx-auto mb-5 shadow-md">
-          ✉️
-        </div>
+        <Icon className="w-9 h-9 rounded-lg bg-gradient-sunset flex items-center justify-center text-white font-bold text-base shadow-sm"/>
 
         {/* Eyebrow */}
         <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-secondary mb-3">

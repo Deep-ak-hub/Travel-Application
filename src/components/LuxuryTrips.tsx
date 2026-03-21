@@ -8,7 +8,7 @@ import { luxuryTreks } from "../config/data";
 
 function FeaturePill({ text }: { text: string }) {
   return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-dark bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full">
+    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-text-light/80 bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full">
       <span className="w-1 h-1 rounded-full bg-accent-dark" />
       {text}
     </span>
@@ -41,7 +41,7 @@ export default function LuxuryTrips() {
             <h2 className="text-3xl sm:text-4xl font-bold text-text-light leading-tight">
               Luxury Trips
             </h2>
-            <p className="mt-2 text-text-light/60 max-w-md">
+            <p className="mt-2 text-text-light max-w-md">
               Premium lodges, private guides, and flawless logistics — for those
               who want the Himalayas without compromise.
             </p>
@@ -65,7 +65,7 @@ export default function LuxuryTrips() {
             "Gourmet dining",
             "Fully customisable",
           ].map((f) => (
-            <FeaturePill key={f} text={f} />
+            <FeaturePill key={f} text={f}/>
           ))}
         </div>
 

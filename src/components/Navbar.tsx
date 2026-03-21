@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { NAV_LINKS, CONTACT, SITE_NAME } from "../config/constants";
-import type { NavLink } from "../config/constants";
+import { NAV_LINKS, CONTACT, SITE_NAME } from "../config/constants.ts";
+import type { NavLink } from "../config/constants.ts";
 import Button from "./Button";
+import { Link } from "react-router-dom";
+import Logo from "./Logo.tsx";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
@@ -9,15 +11,15 @@ import Button from "./Button";
 function DropdownMenu({ items }: { items: NavLink["children"] }) {
   if (!items?.length) return null;
   return (
-    <ul className="absolute top-full left-0 mt-2 w-52 bg-background-light border border-border rounded-theme shadow-xl py-1.5 z-50">
+    <ul className="absolute top-full left-0 mt-2 w-52 bg-background-light border border-border rounded-(--radius) shadow-xl py-1.5 z-50">
       {items.map((item) => (
         <li key={item.href}>
-          <a
-            href={item.href}
+          <Link
+            to={item.href}
             className="block px-4 py-2 text-sm text-text hover:bg-border hover:text-primary transition-colors"
           >
             {item.label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
@@ -44,8 +46,8 @@ function NavItem({ link }: { link: NavLink }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <a
-        href={link.href}
+      <Link
+        to={link.href}
         className="flex items-center gap-1 text-sm font-medium text-text hover:text-primary transition-colors py-1"
       >
         {link.label}
@@ -60,7 +62,7 @@ function NavItem({ link }: { link: NavLink }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         )}
-      </a>
+      </Link>
       {hasChildren && open && <DropdownMenu items={link.children} />}
     </div>
   );
@@ -74,12 +76,12 @@ function MobileNavItem({ link }: { link: NavLink }) {
   return (
     <li>
       <div className="flex items-center justify-between">
-        <a
-          href={link.href}
+        <Link
+          to={link.href}
           className="flex-1 py-3 text-sm font-medium text-text hover:text-primary transition-colors"
         >
           {link.label}
-        </a>
+        </Link>
         {hasChildren && (
           <button
             onClick={() => setExpanded(!expanded)}
@@ -103,12 +105,12 @@ function MobileNavItem({ link }: { link: NavLink }) {
         <ul className="pl-4 border-l border-border mb-1">
           {link.children!.map((child) => (
             <li key={child.href}>
-              <a
-                href={child.href}
+              <Link
+                to={child.href}
                 className="block py-2 text-sm text-text-muted hover:text-primary transition-colors"
               >
                 {child.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -144,8 +146,8 @@ export default function Navbar() {
           <span className="text-text-light/70">
             🌏 Local Himalayan experts — serving trekkers since 2009
           </span>
-          <a
-            href={CONTACT.whatsapp}
+          <Link
+            to={CONTACT.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-secondary-light hover:text-secondary transition-colors font-medium"
@@ -153,7 +155,7 @@ export default function Navbar() {
             <span>📞</span>
             {CONTACT.phone}
             <span className="text-text-light/50 font-normal">· WhatsApp 24/7</span>
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -168,14 +170,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-9 h-9 rounded-lg bg-gradient-sunset flex items-center justify-center text-white font-bold text-base shadow-sm">
-              HT
-            </div>
-            <span className="font-bold text-lg text-text tracking-tight">
-              {SITE_NAME}
-            </span>
-          </a>
+          <Logo />
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center">
