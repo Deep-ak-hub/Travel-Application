@@ -125,7 +125,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-[92vh] min-h-[580px] max-h-[860px] overflow-hidden">
+    <section className="relative w-full h-[92vh] min-h-145 max-h-215 overflow-hidden">
 
       {/* ── Background slides ─────────────────────────────────── */}
       {HERO_SLIDES.map((s, i) => (
@@ -148,7 +148,7 @@ export default function Hero() {
         - Clear in the middle so the mountain photo pops
         - Heavy dark at bottom so headline + search are readable
       */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/72" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/35 via-black/15 to-black/72" />
 
       {/* ── All content ───────────────────────────────────────── */}
       <div className="relative z-10 h-full max-w-7xl mx-auto w-full px-4 sm:px-8 flex flex-col justify-between py-8 sm:py-12">
@@ -194,7 +194,7 @@ export default function Hero() {
               variant="ghost"
               size="lg"
               href="/contact"
-              className="!text-white !border !border-white/50 hover:!bg-white/15"
+              className="text-white! border! border-white/50! hover:bg-white/15!"
             >
               Talk to an Expert
             </Button>
@@ -239,7 +239,7 @@ export default function Hero() {
             type="submit"
             variant="secondary"
             size="lg"
-            className="shrink-0 sm:self-stretch !rounded-xl !px-8"
+            className="shrink-0 sm:self-stretch rounded-xl! px-8!"
           >
             Search
           </Button>
