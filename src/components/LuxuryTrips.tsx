@@ -1,5 +1,3 @@
-// src/components/LuxuryTrips.tsx
-
 import TrekCard from "./TrekCard";
 import Button from "./Button";
 import { luxuryTreks } from "../config/data";

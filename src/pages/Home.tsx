@@ -1,8 +1,3 @@
-// src/pages/Home.tsx
-//
-// Homepage — sections are added here one by one as we build them.
-// Import order = visual order on the page.
-
 import Hero from "../components/Hero";
 import BestSellers from "../components/BestSellers";
 import AboutSection from "../components/AboutSection";

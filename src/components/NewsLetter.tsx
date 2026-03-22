@@ -1,5 +1,3 @@
-// src/components/Newsletter.tsx
-
 import { useState } from "react";
 import Button from "./Button";
 import Icon from "./LogoComponent/Icon";
@@ -16,7 +14,7 @@ export default function Newsletter() {
 
     setStatus("loading");
 
-    // Simulate API call — replace with your real endpoint later
+    // Simulate API call — replace with real endpoint later
     await new Promise((r) => setTimeout(r, 1200));
 
     // Basic email check
@@ -31,9 +29,9 @@ export default function Newsletter() {
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-8 bg-background-light border-t border-border">
       <div className="max-w-3xl mx-auto text-center">
-        
+
         {/* Icon */}
-        <Icon className="w-9 h-9 rounded-lg bg-gradient-sunset flex items-center justify-center text-white font-bold text-base shadow-sm"/>
+        <Icon className="mx-auto w-9 h-9 rounded-lg bg-gradient-sunset flex items-center justify-center text-white font-bold text-base shadow-sm"/>
 
         {/* Eyebrow */}
         <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-secondary mb-3">

@@ -1,5 +1,3 @@
-// src/components/BestSellers.tsx
-
 import { useState } from "react";
 import TrekCard from "./TrekCard";
 import Button from "./Button";

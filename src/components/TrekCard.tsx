@@ -1,5 +1,3 @@
-// src/components/TrekCard.tsx
-
 import type { Trek, Badge } from "../config/data";
 import { formatPrice } from "../config/constants";
 

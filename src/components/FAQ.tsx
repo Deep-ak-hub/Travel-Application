@@ -1,5 +1,3 @@
-// src/components/FAQ.tsx
-
 import { useState } from "react";
 import { faqs } from "../config/data";
 import Button from "./Button";

@@ -1,5 +1,3 @@
-// src/components/AboutSection.tsx
-
 import { useState } from "react";
 import Button from "./Button";
 import { stats } from "../config/data";

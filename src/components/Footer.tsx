@@ -1,5 +1,3 @@
-// src/components/Footer.tsx
-
 import { CONTACT, SITE_NAME, SOCIAL, NAV_LINKS } from "../config/constants";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────

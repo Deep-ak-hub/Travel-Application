@@ -2,8 +2,6 @@ import { blogPosts } from "../config/data";
 import { formatDate } from "../config/constants";
 import Button from "./Button";
 
-// ─── Featured post (large, left side) ────────────────────────────────────────
-
 function FeaturedPost({
   post,
 }: {
@@ -12,7 +10,7 @@ function FeaturedPost({
   return (
     <a
       href={`/blog/${post.slug}`}
-      className="group relative flex flex-col justify-end rounded-2xl overflow-hidden min-h-[420px] bg-background-dark"
+      className="group relative flex flex-col justify-end rounded-2xl overflow-hidden min-h-105 bg-background-dark"
     >
       {/* Background image */}
       <img
@@ -23,7 +21,7 @@ function FeaturedPost({
       />
 
       {/* Gradient scrim */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 p-6">

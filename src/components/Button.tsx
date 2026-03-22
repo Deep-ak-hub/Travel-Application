@@ -1,7 +1,5 @@
 import React from "react";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
 type Variant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 type Size    = "sm" | "md" | "lg";
 
