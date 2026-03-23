@@ -88,7 +88,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80"
               alt="Himalayan Trails team"
-              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-xl"
+              className="rounded-2xl w-full aspect-4/3 object-cover shadow-xl"
             />
             <div className="absolute -bottom-4 -left-4 bg-background-light border border-border rounded-xl px-4 py-3 shadow-lg">
               <p className="text-xs font-bold text-text">TripAdvisor</p>
