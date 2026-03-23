@@ -7,10 +7,25 @@ import type { Trek } from "../config/data";
 type Region = "All" | Trek["region"];
 type Difficulty = "All" | Trek["difficulty"];
 
-const REGIONS: Region[] = ["All", "Everest", "Annapurna", "Langtang", "Manaslu", "Mustang"];
-const DIFFICULTIES: Difficulty[] = ["All", "Easy", "Moderate", "Challenging", "Strenuous"];
+const REGIONS: Region[] = [
+  "All",
+  "Everest",
+  "Annapurna",
+  "Langtang",
+  "Manaslu",
+  "Mustang",
+];
+const DIFFICULTIES: Difficulty[] = [
+  "All",
+  "Easy",
+  "Moderate",
+  "Challenging",
+  "Strenuous",
+];
 
-const nepaTreks = allTreks.filter((t) => t.region !== "Bhutan" && t.region !== "Tibet");
+const nepaTreks = allTreks.filter(
+  (t) => t.region !== "Bhutan" && t.region !== "Tibet",
+);
 
 export default function NepaTrekking() {
   const [region, setRegion] = useState<Region>("All");
@@ -35,30 +50,40 @@ export default function NepaTrekking() {
         {/* Filters */}
         <div className="flex flex-col sm:flex-row gap-6 mb-8 flex-wrap">
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">Region</span>
+            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+              Region
+            </span>
             <div className="flex flex-wrap gap-2">
               {REGIONS.map((r) => (
-                <button key={r} onClick={() => setRegion(r)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                <button
+                  key={r}
+                  onClick={() => setRegion(r)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                     region === r
                       ? "bg-primary text-primary-foreground border-primary"
                       : "bg-transparent text-text-muted border-border hover:border-primary hover:text-primary"
-                  }`}>
+                  }`}
+                >
                   {r}
                 </button>
               ))}
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">Difficulty</span>
+            <span className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+              Difficulty
+            </span>
             <div className="flex flex-wrap gap-2">
               {DIFFICULTIES.map((d) => (
-                <button key={d} onClick={() => setDifficulty(d)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                <button
+                  key={d}
+                  onClick={() => setDifficulty(d)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border cursor-pointer transition-all ${
                     difficulty === d
                       ? "bg-secondary text-secondary-foreground border-secondary"
                       : "bg-transparent text-text-muted border-border hover:border-secondary hover:text-secondary"
-                  }`}>
+                  }`}
+                >
                   {d}
                 </button>
               ))}
@@ -67,12 +92,16 @@ export default function NepaTrekking() {
         </div>
 
         <p className="text-sm text-text-muted mb-6">
-          Showing <span className="font-semibold text-text">{filtered.length}</span> packages
+          Showing{" "}
+          <span className="font-semibold text-text">{filtered.length}</span>{" "}
+          packages
         </p>
 
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((trek) => <TrekCard key={trek.id} trek={trek} />)}
+            {filtered.map((trek) => (
+              <TrekCard key={trek.id} trek={trek} />
+            ))}
           </div>
         ) : (
           <div className="py-20 text-center text-text-muted">

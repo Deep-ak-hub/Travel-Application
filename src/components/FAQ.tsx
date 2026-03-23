@@ -170,7 +170,7 @@ export default function FAQ() {
             <Button variant="primary" href="/contact">
               Send a Message
             </Button>
-            <Button variant="outline" href="https://wa.me/9779851058678">
+            <Button variant="outline" href="https://wa.me/9800000988">
               WhatsApp Us
             </Button>
           </div>
